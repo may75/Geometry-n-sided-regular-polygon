@@ -1,4 +1,4 @@
-# Geometry-n-sided-regular-polygon
+# Geometry:n-sided regular polygon
 
 import math package, define regular polygon object that representation of 
 regular polygon, include instance variable include n (the number of sides)
