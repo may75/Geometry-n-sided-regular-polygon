@@ -1,0 +1,65 @@
+from math import tan,pi
+
+#Create regularpolygon object 
+class regularpolygon:
+    
+    # define init method
+    def __init__(self, n = 3, side_length = 1, x = 0, y = 0):
+        self.__n = n
+        self. __side = side_length
+        self.__xc = x
+        self.__yc = y
+        
+    # define getn method returns the number of sides of the polygon 
+    def getn(self):
+        return self.__n
+    
+    # define getside method returns the sides length of the polygon 
+    def getside(self):
+        return self.__side
+    
+    # define getx method returns x-coordinate  of the centroid of the polygon 
+    def getx(self):
+        return self.__xc
+   
+    # define gety method returns y-coordinate  of the centroid of the polygon 
+    def gety(self):
+        return self.__yc
+   
+    # define get_perimeter method returns perimeter of the polygon 
+    def get_perimeter(self):
+        return self.__n * self.__side
+  
+    # define get_area method returns area bounded by the polygon 
+    def get_area(self):
+        n = self.__n
+        s = self.__side
+        return n * s ** 2 / (4 * tan(pi / n))
+  
+    # sets the number of sides of the polygon
+    def setn(self,n):
+        self.__n = n
+        
+    def setside(self, side_length): # sets the side length of the polygon 
+        self.__side = side_length
+
+    def setx(self, x): # sets the x-coordinate  of the centroid of the polygon 
+        self.__xc = x
+ 
+    def sety(self,y): # sets the y-coordinate  of the centroid of the polygon 
+        self.__yc = y
+
+        
+if __name__ == '__main__':
+    # create three regular polygons and then calculate thier Perimeter and area
+    triangle = regularpolygon()
+    hexagon = regularpolygon(6, 4)
+    decagon = regularpolygon (10, 4, 5.6, 7.8)
+    for polygon in [triangle, hexagon, decagon]:
+    # display values of Perimeter and area for triangle, hexagon and decagon
+        print(['\n* Triangle ( )', '* Hexagon for the value (6, 4) ', 
+               '* Decagon the for value (10, 4, 5.6, 7.8)']
+    [[triangle, hexagon, decagon].index(polygon)])
+        print('Perimeter: ', polygon.get_perimeter())
+        print('Area: ', polygon.get_area())
+        print()
